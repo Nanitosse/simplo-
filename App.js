@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+ import { StatusBar } from 'expo-status-bar';
+ import { StyleSheet, Text, View, Image} from 'react-native';
+// import MAin from "./screen/MainComponent";
+// import image from './assets/images/Landscape'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+     <View style={styles.container}>
+      <Image  source={require ("./assets/images/Landscape.png")}/>
       <StatusBar style="auto" />
-    </View>
+     </View>
+    // <MAin/>
   );
 }
 
