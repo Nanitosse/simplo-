@@ -1,26 +1,39 @@
 import { FlatList } from "react-native";
 import { Avatar, ListItem } from "react-native-elements";
+import SplashScreen from "./splashScreen";
+import { useState } from "react";
+import { IMAGES } from '../shared/imageArray';
+import { ImageBackground } from "react-native";
 
 
-const DirectoryScreen = (props) => {
-    renderDirectoryItem=({item})=>{
-        return(
-            <ListItem onPress={()=>props.onPress(item.id)}>
-                <Avatar source={item.image}  />
-                <ListItem.Content>
-                    <ListItem.Title>{item.name}</ListItem.Title>
-                </ListItem.Content>
-            </ListItem>
+
+const DirectoryScreen = ({ navigation }) => {
+    const [images, setImages] = useState(IMAGES)
+    renderDirectoryItem = ({ item }) => {
+        return (
+            
+                <ListItem
+                    onPress={() => navigation.navigate("FieldInfo", { item })}
+
+                >
+                    <Avatar source={item.image} />
+                    <ListItem.Content>
+                        <ListItem.Title>{item.name}</ListItem.Title>
+                    </ListItem.Content>
+                </ListItem>
+            
+
+
         )
     }
-    return(
+    return (
         <FlatList
-        data={props.images}
-        renderItem={renderDirectoryItem}
-        keyExtractor={(item)=>item.id.toString()}
+            data={images}
+            renderItem={renderDirectoryItem}
+            keyExtractor={(item) => item.id.toString()}
 
 
-    />
+        />
 
     )
 
