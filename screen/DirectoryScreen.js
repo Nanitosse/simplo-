@@ -1,9 +1,9 @@
 import { FlatList } from "react-native";
 import { Avatar, ListItem } from "react-native-elements";
-import SplashScreen from "./splashScreen";
+// import SplashScreen from "./splashScreen";
 import { useState } from "react";
-import { IMAGES } from '../shared/imageArray';
-import { ImageBackground } from "react-native";
+import { fields } from '../shared/fieldsArray';
+// import { ImageBackground } from "react-native";
 
 
 

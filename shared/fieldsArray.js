@@ -1,4 +1,4 @@
-export const IMAGES = [
+export const fields = [
    {
       id: 0,
       name: 'calisthenis',
@@ -10,13 +10,15 @@ export const IMAGES = [
       id: 1,
       name: 'gym',
       image: require("../assets/images/gym.jpg"),
-      description: 'Gymnastic exercices (Using  weight )'
+      description: 'Gymnastic exercices (Using  weight )',
+      featured:true,
    },
    {
       id:2,
       name:'nutrutions',
       image:require('../assets/images/nutrution.jpg'),
-      description: 'food intake' 
+      description: 'food intake' ,
+      
 
    }
 

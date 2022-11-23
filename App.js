@@ -2,26 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import MAin from "./screen/MainComponent";
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import SplashScreen from './screen/splashScreen';
+// import SplashScreen from './screen/splashScreen';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
 
 
 export default function App() {
   return (
 
-    <ImageBackground
-      source={require('./assets/images/soccer.png')}
-      style={{
-        flex:1,
-        // resizeMode:'cover',
-        justifyContent:'center',
-        
-      }}
+    <Provider   store={store}>
+      <ImageBackground
+        source={require('./assets/images/soccer.png')}
+        style={{
+          flex: 1,
+          justifyContent: 'center',
 
-    >
-      <NavigationContainer theme={MyTheme}>
-        <MAin />
-      </NavigationContainer>
-    </ImageBackground>
+        }}
+
+      >
+        <NavigationContainer >
+          <MAin />
+        </NavigationContainer>
+      </ImageBackground>
+    </Provider>
 
 
 

@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
-import { Card } from "react-native-elements";
+import { Text, View, StyleSheet } from "react-native";
+import { Card, Icon } from "react-native-elements";
 
 
-const RenderField = ({ item }) => {
+
+const RenderField = ( props ) => {
+    const{item}= props;
     if (item) {
         return (
-            <Card containerStyle={{ padding: 0, width: 350, height: 400, }}>
+            <Card containerStyle={StyleSheet.cardContainer}>
                 <Card.Image source={item.image}>
                     <View style={{ justifyContent: 'center', flex: 1, }}>
                         <Text
@@ -21,16 +23,33 @@ const RenderField = ({ item }) => {
                     </View>
                 </Card.Image>
                 <Text
-                    style={{fontSize:20, textAlign:"center", color:"darkblue"}}
+                    style={{ fontSize: 20, textAlign: "center", color: "darkblue" }}
                 >
                     {item.description}
                 </Text>
+                <Icon
+                    name={ props.isfavorite?'heart':'heart-o'}
+                    type='font-awesome'
+                    color='#f50'
+                    raised
+                    reverse
+                    onPress={()=>props.isfavorite? console.log('Already set as a favorite') : props.markFavorite()}
+                />
             </Card>
         )
     }
     return <View />;
 
 };
+
+styles = StyleSheet.create({
+
+    cardContainer: {
+        paddin: 0,
+        margin: 0,
+        marginBottom: 20,
+    },
+})
 
 
 
